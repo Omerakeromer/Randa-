@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عمر - الضرب الديكارتي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+            text-align: center;
+        }
+        header {
+            background: #4682b4;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px #000;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 1px 1px 4px #000;
+            }
+            to {
+                text-shadow: 2px 2px 8px #fff;
+            }
+        }
+        main {
+            padding: 20px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .button {
+            padding: 15px 30px;
+            background-color: #4682b4;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #5a9bd4;
+        }
+        footer {
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function calculateScore() {
+            const answers = ['ب', 'ج', 'أ', 'ب', 'ج', 'أ', 'ب', 'أ', 'ج', 'ب', 'أ', 'ج', 'ب', 'ج', 'أ', 'ب', 'ج', 'أ', 'ب', 'ج'];
+            let score = 0;
+            answers.forEach((answer, index) => {
+                const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+                if (selected && selected.value === answer) {
+                    score++;
+                }
+            });
+            alert(`نتيجتك: ${score} من 20`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        عمر - الضرب الديكارتي
+    </header>
+    <main>
+        <section id="summary">
+            <h2>ملخص الدرس</h2>
+            <p>العلاقة هي مجموعة من الأزواج المرتبة التي تربط عناصر من مجموعة إلى أخرى. تمثّل العلاقة باستخدام مجال العلاقة ومدى العلاقة.</p>
+            <p>إذا كان لدينا مجموعتان A و B، فإن الضرب الديكارتي A \times B يمثل جميع الأزواج المرتبة الممكنة (a, b) حيث a \in A وb \in B.</p>
+        </section>
+        <section id="questions">
+            <h2>الأسئلة</h2>
+            <form>
+                <!-- الأسئلة -->
+                <div class="question">
+                    <p>1. ما هو مجال العلاقة؟</p>
+                    <label><input type="radio" name="q1" value="أ"> جميع الأزواج المرتبة</label><br>
+                    <label><input type="radio" name="q1" value="ب"> العناصر الأولى</label><br>
+                    <label><input type="radio" name="q1" value="ج"> العناصر الثانية</label>
+                </div>
+                <div class="question">
+                    <p>2. إذا كان A = \\{1, 2\\} و B = \\{a, b\\}، كم عنصر يحتويه A \\times B؟</p>
+                    <label><input type="radio" name="q2" value="أ"> 2</label><br>
+                    <label><input type="radio" name="q2" value="ب"> 3</label><br>
+                    <label><input type="radio" name="q2" value="ج"> 4</label>
+                </div>
+                <div class="question">
+                    <p>3. ماذا يمثل المدى؟</p>
+                    <label><input type="radio" name="q3" value="أ"> العناصر الثانية</label><br>
+                    <label><input type="radio" name="q3" value="ب"> جميع الأزواج المرتبة</label><br>
+                    <label><input type="radio" name="q3" value="ج"> العناصر الأولى</label>
+                </div>
+                <div class="question">
+                    <p>4. إذا كان المجال \\{1, 2\\}، فما هو أحد عناصره؟</p>
+                    <label><input type="radio" name="q4" value="أ"> 3</label><br>
+                    <label><input type="radio" name="q4" value="ب"> 1</label><br>
+                    <label><input type="radio" name="q4" value="ج"> x</label>
+                </div>
+                <div class="question">
+                    <p>5. كم عدد الأزواج في A \\times B إذا كان A = \\{1, 2, 3\\} وB = \\{a, b\\}؟</p>
+                    <label><input type="radio" name="q5" value="أ"> 4</label><br>
+                    <label><input type="radio" name="q5" value="ب"> 5</label><br>
+                    <label><input type="radio" name="q5" value="ج"> 6</label>
+                </div>
+                <div class="question">
+                    <p>6. ما هو تعريف الضرب الديكارتي؟</p>
+                    <label><input type="radio" name="q6" value="أ"> علاقة تربط عنصرين</label><br>
+                    <label><input type="radio" name="q6" value="ب"> مجموعة الأزواج المرتبة</label><br>
+                    <label><input type="radio" name="q6" value="ج"> مجموعة القيم الرقمية</label>
+                </div>
+                <!-- أكمل بنفس الطريقة إلى السؤال 20 -->
+                <div class="question">
+                    <p>20. إذا كان المدى هو \\{a, b, c\\} فما هو أحد عناصره؟</p>
+                    <label><input type="radio" name="q20" value="أ"> b</label><br>
+                    <label><input type="radio" name="q20" value="ب"> 1</label><br>
+                    <label><input type="radio" name="q20" value="ج"> x</label>
+                </div>
+            </form>
+        </section>
+        <footer>
+            <button class="button" onclick="calculateScore()">اضغط هان حتى تعرف نتيجتك</button>
+        </footer>
+    </main>
+</body>
+</html>
